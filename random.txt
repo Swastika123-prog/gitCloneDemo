@@ -1,0 +1,133 @@
+prgm 1
+cd directory
+notepad filename.txt
+git add .
+git commit -m "Welcome"
+notepad filename.txt
+git add .
+git commit -m "Changes made"
+git log
+git show
+
+prgm 2
+git checkout master
+git checkout -b feature-branch
+notepad new.py
+git add new.py
+git commit -m "File added to featured-branch"
+git log
+git checkout master
+git merge feature-branch
+git log
+git show
+
+prgm 3
+cd GitLab
+git checkout -b featured-branch
+notepad jinx.c
+git stash save "git stash demo"
+git checkout master
+git log 
+git stash apply
+git log
+
+prgm 4
+git clone <git repo>
+git remote add origin <git repo>
+git remote -v
+git fetch origin
+
+prgm 5
+mkdir GitLab
+cd GitLab
+git init
+touch secbase.py
+git checkout -b main
+git add .
+git commit -m "base commit"
+git remote add origin <repo>
+git remote -v
+git push origin main
+git checkout -b feature
+touch feature.txt
+git add .
+git commit -m "Feature commit"
+git fetch origin
+git push origin main
+touch feature2.py
+git add .
+git commit -m "new feature"
+git fetch
+git rebase origin/feature
+git push origin feature
+
+prgm 6
+cd GitLab
+touch sample.txt
+git add .
+git commit -m "sample1"
+git branch master
+git checkout master
+ls
+git merge feature -m "merging branches"
+ls
+
+prgm 7
+git log
+git log master
+git tag v1.0
+git log master
+git tag v2.0
+git log master
+
+prgm 8
+mkdir cherry
+cd cherry
+git init
+touch new.txt
+touch base.txt
+git add .
+git commit -m "New files added"
+git checkout -b new
+touch rave.txt
+touch save.txt
+touch dave.txt
+git add .
+ls
+git log new --oneline
+git checkout master
+git log new --oneline (copy first and second address)
+git cherry-pick <address of 2nd file> ..< address of 1st file>
+ls
+git cherry-pick <address of 2nd file>
+ls
+git log master --oneline
+
+
+prgm 9
+cd new
+notepad fact.txt
+git add fact.txt
+git commit -m "new file"
+git log --oneline
+(head->master address copy)
+git show <copied address>
+git log -n 1 <copied address>
+
+prgm 10
+git config --global user.name "John Doe"
+git config --global user.email "johndoe@gmail.com"
+touch git.txt
+git add git.txt
+git commit --author='John Doe <johndoe@hmail.com>' -m "user"
+git log --author "John Doe" --since="2026-01-22"--until="2026-03-15"
+
+prgm 11
+git log -n 5
+
+prgm 12
+notepad file.txt
+git add file.txt
+git commit -m "file deletion"
+git log --oneline (copy head->master address)
+git revert <copied address>
